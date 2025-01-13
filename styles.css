@@ -1,0 +1,125 @@
+/* Aplicando Montserrat como fonte padrão */
+body {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0; /* Espaço para a navbar fixa */
+  margin: 0;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.navbar-brand {
+  color: #7F6ED6; /* cor do texto */
+  text-decoration: none; /* Remove sublinhado */
+  cursor: default; /* Remove o efeito de ponteiro de link */
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.navbar-brand:hover {
+  color: #7F6ED6; /* Garante que não haja alteração de cor ao passar o mouse */
+  text-decoration: none; /* Remove estilo de hover do bootstrap*/
+}
+
+
+.nav-link {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #7F6ED6 !important;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('img/front-end-concept.jpg') no-repeat center center/cover;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff; /* Garante que o texto seja legível */
+  text-align: center;
+}
+
+.hero span {
+  color: #7F6ED6;
+}
+
+#about img {
+  max-width: 80%; /* Ajusta o tamanho da imagem */
+  border: 5px solid #7F6ED6; /* Bordas coloridas */
+}
+
+#about {
+  padding: 6rem 0; /* Espaçamento interno */
+}
+
+#about h2 {
+  color: #7F6ED6;
+}
+#about p {
+  font-size: 16px;
+  text-align: justify; /* Justifica o texto */
+  text-align-last: center; /* Centraliza a última linha do parágrafo */
+  margin: 0 auto; /* Garante centralização horizontal */
+  max-width: 800px; /* Limita a largura dos parágrafos para uma melhor legibilidade */
+  line-height: 1.8
+}
+
+
+/* Hero Section */
+/* .hero-section {
+  padding: 6rem 0;  /* Reduzido de 80px para melhor espaçamento */
+  /* background-color: #D7D4E1;
+  min-height: auto;  /* Remove altura mínima fixa */
+/* } */
+
+/* .hero-section h1 {
+  font-weight: 700;
+  /* letter-spacing: -0.5px; */
+  /* margin-bottom: 1rem;
+  border: red solid 1px;
+  display: inline-flex;
+} */
+/*
+.hero-section .lead {
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #494949;
+} */
+
+/* Ajustes responsivos */
+/* @media (max-width: 768px) {
+  .hero-section {
+      padding: 4rem 0;  /* Menos padding em telas menores */
+      /* text-align: center;
+  } */
+
+  /* .hero-section img {
+      margin-bottom: 2rem;
+      max-width: 60%;  /* Imagem um pouco menor em telas pequenas */
+      /* margin-left: auto;
+      margin-right: auto;
+      display: block;
+  }
+} */
+
+/* @media (max-width: 576px) {
+  .hero-section {
+      padding: 3rem 0;  /* Ainda menos padding em telas muito pequenas */
+  /* }
+
+  .hero-section img {
+      /* max-width: 80%;  /* Imagem um pouco maior em telas muito pequenas */
+  /* }
+} */
