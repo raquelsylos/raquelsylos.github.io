@@ -16,3 +16,17 @@ window.addEventListener('scroll', () => {
 
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita valores negativos
 });
+
+function carregarPagina(pagina) {
+  fetch(pagina)
+      .then(response => response.text())
+      .then(html => {
+          document.getElementById('content').innerHTML = html;
+      });
+}
+
+// Se quiser carregar o conteúdo da home automaticamente quando o site abrir
+// Separe o conteúdo da home em um arquivo home-content.html
+document.addEventListener('DOMContentLoaded', function() {
+  carregarPagina('home-content.html');
+});
