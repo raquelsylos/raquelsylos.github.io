@@ -1,11 +1,30 @@
 // Variáveis
 $font-primary: 'Montserrat', sans-serif;
+$font-secondary: "Playwrite IN", serif;
 $color-primary: #7F6ED6;
 $color-dark: #000;
 $color-light: #D7D4E1;
 $primary-color: #482FC4;
-$font-secondary: "Playwrite IN", serif;
 $color-secondary: #FF6B00;
+$navbar-bg: #000000; // Nova variável para background da navbar
+
+// Breakpoints
+$tablet-width: 768px;
+$mobile-width: 320px;
+
+// Mixins para media queries
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
 // Estilos gerais
 body {
   font-family: $font-primary;
@@ -21,11 +40,14 @@ body {
   transition: top 0.3s;
   z-index: 10;
   padding: 1rem 0;
+  background-color: $navbar-bg !important; // Alteração da cor do background
 
   .container-fluid {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .logo-container {
@@ -41,6 +63,14 @@ body {
     font-weight: 600;
     margin: 0 0 0.5rem 0;
     padding: 0.5rem 0;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
   }
 
   .navbar-collapse {
@@ -51,6 +81,14 @@ body {
   .navbar-nav {
     display: flex;
     gap: 2rem;
+
+    @include tablet {
+      gap: 1rem;
+    }
+
+    @include mobile {
+      gap: 0.5rem;
+    }
   }
 
   .nav-link {
@@ -160,17 +198,102 @@ body {
   }
 }
 
-// media queries para responsividade
-@media (max-width: 576px) {
-  h1 {
-    font-size: 2rem;
+// About Section
+.about-section {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.about-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+
+  @include tablet {
+    padding: 0 2rem;
+  }
+
+  @include mobile {
+    padding: 0 1rem;
   }
 }
 
-@media (max-width: 991px) {
-  .navbar-nav{
-    flex-direction: column;
-    align-items: center;
-    gap: 1;
+// Nova estrutura para imagem com moldura
+.profile-image-container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  // margin-bottom: 2rem;
+  padding-top: 16px;
+
+  @include tablet {
+    width: 250px;
+    height: 250px;
+  }
+
+  @include mobile {
+    width: 200px;
+    height: 200px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid $color-primary;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Card do About
+.about-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+
+  h2 {
+    color: $color-primary;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  p {
+    line-height: 1.6;
+    color: $color-dark;
+    margin-bottom: 1rem;
+  }
+}
+
+// Skills Section
+.skills-section {
+  background-color: white;
+  padding: 4rem 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
 }

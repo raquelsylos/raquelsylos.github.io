@@ -13,8 +13,11 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -29,46 +32,144 @@
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link hoverable" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link hoverable" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link hoverable" href="#portfolio">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link hoverable" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link hoverable" href="#" onclick="carregarPagina('home-content.html')">Home</a></li>
+          <li class="nav-item"><a class="nav-link hoverable" href="#" onclick="carregarPagina('about.html')">About</a></li>
+          <li class="nav-item"><a class="nav-link hoverable" href="#" onclick="carregarPagina('skills.html')">Skills</a></li>
+          <li class="nav-item"><a class="nav-link hoverable" href="#" onclick="carregarPagina('projects.html')">Projects</a></li>
+          <li class="nav-item"><a class="nav-link hoverable" href="#" onclick="carregarPagina('contact.html')">Contact</a></li>
+
         </ul>
       </div>
     </div>
   </nav>
 
-  <!--header -->
-  <header class="hero text-center text-white">
+
+  <!-- Área de conteúdo dinâmico -->
+  <main id="content">
+    <!-- Aqui vai o conteúdo da home por padrão -->
+    <header>
+        <!-- Seu header atual da home aqui -->
+    </header>
+  </main>
+
+
+
+  <!-- Skills Section -->
+  <!-- <section id="skills" class="section-padding bg-light">
     <div class="container">
-      <h1>Junior Full-Stack Web Developer</h1>
-      <div class="btn-container">
-        <a href="#" class="btn btn-ghost btn-lg">GitHub</a>
-        <a href="#" class="btn btn-outline-light btn-lg">Resume</a>
+      <h2 class="section-title">Skills & Tools</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <i class="fab fa-ruby"></i>
+              <span>Ruby</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-gem"></i>
+              <span>Rails</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-database"></i>
+              <span>SQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Tools</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <i class="fab fa-git-alt"></i>
+              <span>Git</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-figma"></i>
+              <span>Figma</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </header>
-  <hr>
+  </section> -->
 
-  <article class="card">
-      <div class="temporary_text">
-          <img src="img/intro_pic.jpg" alt="Raquel Sylos" class="card_img"/>
+  <!-- Projects Section -->
+  <!-- <section id="projects" class="section-padding">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid"> -->
+        <!-- Project Card 1 -->
+        <!-- <div class="project-card">
+          <div class="project-image">
+            <img src="img/project1.jpg" alt="Project 1">
+          </div>
+          <div class="project-content">
+            <h3>Project Name</h3>
+            <p>Brief description of the project and the technologies used.</p>
+            <div class="project-links">
+              <a href="#" class="btn btn-ghost">View Project</a>
+              <a href="#" class="btn btn-outline-light">GitHub</a>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Project Card 2 -->
+        <!-- <div class="project-card">
+          <div class="project-image">
+            <img src="img/project2.jpg" alt="Project 2">
+          </div>
+          <div class="project-content">
+            <h3>Project Name</h3>
+            <p>Brief description of the project and the technologies used.</p>
+            <div class="project-links">
+              <a href="#" class="btn btn-ghost">View Project</a>
+              <a href="#" class="btn btn-outline-light">GitHub</a>
+            </div>
+          </div>
+        </div>
       </div>
-  <div class="card_content">
-      <span class="card_title">This is a Title</span>
-          <span class="card_subtitle">Thsi is a subtitle of this page. Let us see how it looks on the Web.</span>
-          <p class="card_description">Lorem ipsum dolor, sit amet  expedita exercitationem recusandae aut dolor tempora aperiam itaque possimus at, cupiditate earum, quae repudiandae aspernatur? Labore minus soluta consequatur placeat.</p>
+    </div>
+  </section> -->
 
-  </div>
-  </article>
-<!-- Hello! I'm Raquel, but most people call me 'Rachel' :D. I was born and raised in São Paulo, Brazil.
-I'm passionate about capturing the beauty of nature and uncovering hidden gems in the places I go. I thrive on connecting with people who share similar values and ideals. My greatest dream is to explore and experience as many incredible places around the world as I can. -->
-<!-- On the professional side, I'm a former designer turned Full-Stack Web Developer with a deep passion for crafting amazing web experiences. I enjoy learning new technologies and bringing creative solutions to the projects I work on. I'm always striving to improve my skills and collaborate on meaningful projects that make a positive impact on people's lives. -->
-
-
-  <!-- <footer class="text-center py-3 bg-dark text-white">
-    <p>&copy; 2025 Raquel Sylos - Todos os direitos reservados.</p>
-  </footer> -->
+  <!-- Footer -->
+  <footer class="footer bg-dark text-white">
+    <div class="container">
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 Raquel Sylos - All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
