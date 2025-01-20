@@ -8,23 +8,15 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  -webkit-transition: top 0.3s;
   transition: top 0.3s;
   z-index: 10;
   padding: 1rem 0;
   background-color: #000000 !important;
 }
 .navbar .container-fluid {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -53,13 +45,9 @@ body {
 }
 .navbar .navbar-collapse {
   width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 .navbar .navbar-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 2rem;
 }
@@ -92,16 +80,11 @@ body {
 
 .hoverable {
   display: inline-block;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   vertical-align: middle;
   position: relative;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
+  transform: translateZ(0);
   transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 .hoverable:before {
   position: absolute;
@@ -114,37 +97,23 @@ body {
   width: 90%;
   opacity: 0;
   background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, -webkit-transform 0.3s;
   transition: transform 0.3s, opacity 0.3s;
-  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 .hoverable:hover, .hoverable:focus {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 .hoverable:hover:before, .hoverable:focus:before {
   opacity: 1;
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .hero {
   background: url("img/header_2.jpg") no-repeat center center/cover;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
   color: #482FC4;
   padding: 2rem;
@@ -164,7 +133,6 @@ body {
   border-radius: 50px;
   font-weight: bold;
   opacity: 0.7;
-  -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   margin-right: 0.7rem;
 }
@@ -180,7 +148,6 @@ body {
   border-radius: 50px;
   font-weight: bold;
   opacity: 0.7;
-  -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   margin-right: 0.7rem;
 }
@@ -197,16 +164,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
 }
 @media (max-width: 768px) {
@@ -241,20 +201,17 @@ body {
 .profile-image-container img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
   border: 8px solid #7F6ED6;
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .about-card {
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   width: 100%;
 }
@@ -292,4 +249,6 @@ body {
   .skills-section .skills-grid {
     grid-template-columns: 1fr;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
