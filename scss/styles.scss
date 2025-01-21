@@ -6,8 +6,9 @@ $color-dark: #000;
 $color-light: #D7D4E1;
 $primary-color: #482FC4;
 $color-secondary: #FF6B00;
-$navbar-bg: #191919; // Nova variável para background da navbar
+$navbar-bg: #000000; // Nova variável para background da navbar
 $extra-font: "Cookie", serif;
+$text-color: #555;
 
 // Breakpoints
 $tablet-width: 768px;
@@ -46,7 +47,7 @@ body {
   width: 100%;
   transition: top 0.3s;
   z-index: 10;
-  padding: 1rem 0;
+  padding: 0.2;
   background-color: $navbar-bg !important; // Alteração da cor do background
 
   .container-fluid {
@@ -65,18 +66,18 @@ body {
 
   .logo {
     font-family: $extra-font;
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: $color-primary;
     font-weight: lighter;
     margin: 0 0 0.5rem 0;
     padding: 0.5rem 0;
 
     @include tablet {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     @include mobile {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
   }
 
@@ -184,7 +185,7 @@ body {
       font-family: $font-primary;
       font-size: 3rem;
       margin-bottom: 1rem;
-      letter-spacing: px;
+      letter-spacing: 0.2rem;
 
       @include tablet {
         font-size: 2.5rem;
@@ -192,6 +193,8 @@ body {
 
       @include mobile {
         font-size: 2rem;
+        margin-bottom: 3rem;
+        letter-spacing: 0.1rem;
       }
     }
 
@@ -217,6 +220,10 @@ body {
       @include tablet {
         flex-direction: column;
         gap: 0.5rem;
+      }
+
+      @include mobile {
+        display: grid;
       }
     }
   }
@@ -274,7 +281,7 @@ body {
 //footer
 .footer {
   margin: 0;
-  padding: 1rem;
+  padding: 2rem;
   background-color: $navbar-bg;
   color: $color-light;
 
@@ -291,77 +298,113 @@ body {
   }
 }
 
-// About Section
-.about-section {
-  padding: 4rem 0;
-  background-color: #f8f9fa;
-}
-
-.about-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 1rem;
+// About section styles
+#about {
+  // Container styles
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .5rem;
-
-  @include tablet {
-    padding: 0 2rem;
-  }
-
-  @include mobile {
-    padding: 0 1rem;
-  }
-}
-
-// Nova estrutura para imagem com moldura
-.profile-image-container {
-  width: 400px;
-  height: 400px;
-  position: relative;
-  // margin-bottom: 2rem;
-  padding-top: 16px;
-
-  @include tablet {
-    width: 250px;
-    height: 250px;
-  }
-
-  @include mobile {
-    width: 200px;
-    height: 200px;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 8px solid $color-primary;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  }
-}
-
-// Card do About
-.about-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  align-items: flex-start; // Alinha items no topo
+  justify-content: space-between;
+  padding: 10rem 4rem 4rem; // Aumenta padding superior para compensar navbar
+  gap: 4rem;
+  min-height: 100vh;
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 
-  h2 {
-    color: $color-primary;
-    margin-bottom: 1rem;
-    text-align: center;
+  // Image container
+  .image-container {
+    flex: 1;
+    max-width: 500px;
+    padding-top: 1rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
   }
 
-  p {
-    line-height: 1.6;
-    color: $color-dark;
-    margin-bottom: 1rem;
+  // Content container
+  .content-container {
+    flex: 1;
+    padding-top: 1rem; // Ajusta alinhamento vertical com a imagem
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: $color-primary;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: $text-color;
+
+      &.w3-text-grey {
+        color: $text-color;
+      }
+
+      strong {
+        font-weight: 600;
+        color: $text-color
+      }
+    }
+  }
+
+  // Tablet responsiveness
+  @media (max-width: 1024px) {
+    padding-top: 8rem;
+    gap: 2rem;
+
+    .content-container {
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    .image-container {
+      max-width: 40%;
+    }
+  }
+
+  // Mobile responsiveness
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 6rem 1.5rem 2rem;
+    text-align: center;
+
+    .navbar .logo-container {
+      margin-bottom: 0;
+    }
+
+    .image-container {
+      max-width: 100%;
+      margin: 0 auto 2rem;
+      margin-top: 2rem;
+    }
+
+    .content-container {
+      padding-top: 0;
+
+      h1 {
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
   }
 }
 
