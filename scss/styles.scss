@@ -6,7 +6,8 @@ $color-dark: #000;
 $color-light: #D7D4E1;
 $primary-color: #482FC4;
 $color-secondary: #FF6B00;
-$navbar-bg: #000000; // Nova variável para background da navbar
+$navbar-bg: #191919; // Nova variável para background da navbar
+$extra-font: "Cookie", serif;
 
 // Breakpoints
 $tablet-width: 768px;
@@ -26,6 +27,12 @@ $mobile-width: 320px;
 }
 
 // Estilos gerais
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: $font-primary;
   margin: 0;
@@ -57,10 +64,10 @@ body {
   }
 
   .logo {
-    font-family: $font-secondary;
-    font-size: 2.5rem;
+    font-family: $extra-font;
+    font-size: 3rem;
     color: $color-primary;
-    font-weight: 600;
+    font-weight: lighter;
     margin: 0 0 0.5rem 0;
     padding: 0.5rem 0;
 
@@ -145,55 +152,141 @@ body {
 
 // Header
 .hero {
-  background: url('img/header_2.jpg') no-repeat center center/cover;
-  height: 100vh;
+  position: relative;
+  background: url('../img/header_bg2.jpg') no-repeat center center/cover;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   text-align: center;
-  color: $primary-color;
   padding: 2rem;
+  color: $color-light;
 
-  h1 {
-    font-family: $font-primary;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+  // Criando a camada opaca
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0; //limita a altura
+    background-color: rgba(0, 0, 0, 0.7); // Camada opaca ajustável
+    z-index: 1; // Garante que a camada fique atrás do conteúdo
   }
 
-  .btn-ghost {
-    background-color: $primary-color;
-    border: none;
-    color: $color-light;
-    border: 1px solid $color-light;
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-weight: bold;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-    margin-right: 0.7rem;
+  .hero-content {
+    position: relative; // Mantém o conteúdo acima da camada opaca
+    z-index: 2;
+    max-width: 800px;
 
-    &:hover {
-      opacity: 1;
+    h1 {
+      font-family: $font-primary;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      letter-spacing: px;
+
+      @include tablet {
+        font-size: 2.5rem;
+      }
+
+      @include mobile {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      font-family: $font-primary;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+
+      @include tablet {
+        font-size: 1rem;
+      }
+
+      @include mobile {
+        font-size: 0.9rem;
+      }
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+
+      @include tablet {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
   }
+}
 
+// Botões estilosos e responsivos
+.btn-ghost,
+.btn-outline-light {
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 8px; // Bordas levemente arredondadas
+  text-decoration: none; // Remove sublinhado
+  display: inline-block;
 
-  .btn-outline-light {
-    background-color: $color-secondary;
-    border: none;
-    color: $color-light;
-    border: 1px solid $color-light;
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-weight: bold;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-    margin-right: 0.7rem;
+  @include tablet {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+  }
 
-    &:hover {
-      opacity: 1;
+  @include mobile {
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+.btn-ghost {
+  background-color: $color-primary;
+  color: $color-light;
+  border: 1px solid $color-light;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: lighten($primary-color, 10%);
+    color: $color-dark;
+    font-weight: 700;
+  }
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: $color-light;
+  border: 1px solid $color-light;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: $color-light;
+    color: $primary-color;
+    font-weight: 700;
+  }
+}
+
+//footer
+.footer {
+  margin: 0;
+  padding: 1rem;
+  background-color: $navbar-bg;
+  color: $color-light;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+
+    p {
+      margin: 0; // Remove qualquer margem padrão do elemento
     }
   }
 }
