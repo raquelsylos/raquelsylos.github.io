@@ -427,15 +427,16 @@ body {
   .projects-container {
       max-width: 1200px; // Limita a largura máxima do container
       margin: 0 auto;
+
+      h2 {
+          font-size: 1.5rem;
+          margin: 3rem;
+          text-align: center;
+          color: $color-primary;
+          letter-spacing: 0.3rem;
+      }
   }
 
-  h2 {
-      font-size: 1.5rem;
-      margin: 3rem;
-      text-align: center;
-      color: $color-primary;
-      letter-spacing: 0.3rem;
-  }
 
   .projects-grid {
       display: grid;
@@ -542,9 +543,13 @@ body {
   @media (max-width: 768px) {
       padding: 6rem 1.5rem 2rem;
 
-      h2 {
-          font-size: 2.5rem;
-          margin-bottom: 2rem;
+      .projects-container {
+
+        h2 {
+            font-size: 1.5rem;
+            padding-top: 2rem;
+            margin-bottom: 2rem;
+        }
       }
 
       .projects-grid {
@@ -614,11 +619,14 @@ body {
   }
 
   @media (max-width: 768px) {
-    padding: 50px 15px;
+    padding: 1rem 2rem;
 
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
+    .skills-container {
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
     }
 
     .skills-grid {
