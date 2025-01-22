@@ -19,9 +19,18 @@ window.addEventListener('scroll', () => {
 
 function carregarPagina(pagina) {
   fetch(pagina)
-      .then(response => response.text())
+      .then(response => {
+          if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.text();
+      })
       .then(html => {
           document.getElementById('content').innerHTML = html;
+      })
+      .catch(error => {
+          console.error('Erro ao carregar página:', error);
+          document.getElementById('content').innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
       });
 }
 
