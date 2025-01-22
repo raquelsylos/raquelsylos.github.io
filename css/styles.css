@@ -399,7 +399,6 @@ footer p {
   letter-spacing: 0.3rem;
 }
 #projects .projects-container h4 {
-  border: solid red 1px;
   display: flex;
   justify-content: center;
   text-align: center;
