@@ -74,9 +74,9 @@ body {
 
   .logo {
     // font-family: $extra-font;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: $color-tertiary;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.3rem;
     font-weight: lighter;
     margin: 1rem 0;
     padding: 0.5rem 0;
@@ -110,6 +110,7 @@ body {
 
   .nav-link {
     color: $color-light;
+    letter-spacing: 0.1rem;
     &:hover {
       color: $color-primary;
       text-decoration: none;
@@ -207,6 +208,16 @@ body {
       }
     }
 
+    h4 {
+      font-family: $font-primary;
+      font-size: 1rem;
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 1rem;
+      letter-spacing: 0.1rem;
+      color: $text-color;
+    }
+
     p {
       font-family: $font-primary;
       font-size: 1.2rem;
@@ -297,10 +308,9 @@ footer {
   overflow: hidden;
 
   h1 {
-    font-size: 33px;
+    font-size: 35px;
     text-align: center;
     font-family: $extra-font;
-    // text-transform: uppercase;
     color: $color-light;
     letter-spacing: 0.2rem;
   }
@@ -316,7 +326,7 @@ footer {
       padding: 2rem 0;
 
       a {
-        padding: 0.7rem;
+        padding: 0.7rem 0.9rem;
         margin: 1.5rem;
         font-size: 1.7rem;
         color: $color-light;
@@ -387,7 +397,7 @@ footer {
     p {
       font-size: 1rem;
       line-height: 1.8;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.3rem;
       color: $text-color;
 
       &.w3-text-grey {
@@ -397,6 +407,32 @@ footer {
       strong {
         font-weight: 600;
         color: $text-color
+      }
+
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1.3rem;
+      color: $color-primary;
+      letter-spacing: 0.2rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.3rem;
+      color: $text-color;
+      &.w3-text-grey {
+        color: $text-color;
+      }
+
+      a {
+        font-weight: 600;
+        color: $text-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
       }
     }
   }

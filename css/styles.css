@@ -38,9 +38,9 @@ body {
   width: 100%;
 }
 .navbar .logo {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #9992C1;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.3rem;
   font-weight: lighter;
   margin: 1rem 0;
   padding: 0.5rem 0;
@@ -75,6 +75,7 @@ body {
 }
 .navbar .nav-link {
   color: #ece8f8;
+  letter-spacing: 0.1rem;
 }
 .navbar .nav-link:hover {
   color: #7F6ED6;
@@ -163,6 +164,15 @@ body {
     margin-bottom: 3rem;
     letter-spacing: 0.1rem;
   }
+}
+.hero .hero-content h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1rem;
+  color: #555;
 }
 .hero .hero-content p {
   font-family: "Montserrat", sans-serif;
@@ -255,7 +265,7 @@ footer {
   overflow: hidden;
 }
 footer h1 {
-  font-size: 33px;
+  font-size: 35px;
   text-align: center;
   font-family: "Cookie", serif;
   color: #ece8f8;
@@ -271,7 +281,7 @@ footer .list-inline li {
   padding: 2rem 0;
 }
 footer .list-inline li a {
-  padding: 0.7rem;
+  padding: 0.7rem 0.9rem;
   margin: 1.5rem;
   font-size: 1.7rem;
   color: #ece8f8;
@@ -330,7 +340,7 @@ footer p {
 #about .content-container p {
   font-size: 1rem;
   line-height: 1.8;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.3rem;
   color: #555;
 }
 #about .content-container p.w3-text-grey {
@@ -339,6 +349,28 @@ footer p {
 #about .content-container p strong {
   font-weight: 600;
   color: #555;
+}
+#about .content-container h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.3rem;
+  color: #7F6ED6;
+  letter-spacing: 0.2rem;
+}
+#about .content-container h4 {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.3rem;
+  color: #555;
+}
+#about .content-container h4.w3-text-grey {
+  color: #555;
+}
+#about .content-container h4 a {
+  font-weight: 600;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 @media (max-width: 1024px) {
   #about {
